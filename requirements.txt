@@ -1,0 +1,11 @@
+# Tested with Python 3.10--3.12.
+# tree-sitter 0.20.x is required by ripple/parse_utils.py's Language/Parser API.
+anthropic==0.49.0
+GitPython==3.1.44
+google-generativeai==0.8.5
+networkx==3.4.2
+openai==1.65.5
+pandas==2.2.3
+python-dotenv==1.0.1
+tqdm==4.67.1
+tree-sitter==0.20.4

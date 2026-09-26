@@ -10,26 +10,25 @@ This section describes the preqrequisites, and contains instructions, to get the
 `ripple` requires access to OpenAI/Google/Anthropic API credentials to use GPT-4o/Gemini-Flash-2.0/Claude-3.5-Sonnet LLMs, respectively. However, we also provide all LLM responses for the dataset (see `outputs.zip`), and this can be skipped for experiments' replication.
 
 #### Project Environment
-Currently, `ripple` has been tested and works well on Ububtu OS, and can be set up easily with all the prerequisite packages by following these instructions (if `conda` is already installed, update to the latest version with conda update conda, and skip steps 1 - 3): 
-  1. Download the latest, appropriate version of [conda](https://repo.anaconda.com/miniconda/) for your machine (tested with ``conda 23.11.0``).
-  2. Install  it by running the `conda_install.sh` file, with the command:
-     ```bash
-     $ bash conda_install.sh
-     ```
-  3. Add `conda` to bash profile:
-     ```bash
-     $ source ~/.bashrc
-     ```
-  4. Navigate to ``ripple`` (top-level directory) and create a conda virtual environment with the included `environment.yml` file using the following command:     
-     ```bash
-     $ conda env create -f environment.yml
-     ```
+`ripple` uses a standard Python virtual environment. It has been tested on Ubuntu
+with Python 3.10--3.12. From the repository root, create and activate a virtual
+environment, then install the pinned dependencies:
 
-     To test successful installation, make sure ``ripple`` appears in the list of conda environments returned with ``conda env list``.
-  5. Activate the virtual environment with the following command:     
-     ```bash
-     $ conda activate ripple
-     ```
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+On Windows PowerShell, activate the environment with:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+The repository's `.gitignore` already excludes `.venv/`. To leave the environment
+later, run `deactivate`.
 
 ### Directory Structure
 
